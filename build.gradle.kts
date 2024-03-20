@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.9.22"
+    kotlin("multiplatform") version "1.9.23"
 }
 
 group = "de.syna.hoechstdigital.demo"
@@ -10,12 +10,10 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
 kotlin {
-    jvmToolchain(17)
+    js {
+        binaries.executable()
+    }
 }
